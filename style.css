@@ -93,7 +93,7 @@ input {
 #telefone,
 #nome,
 #idade {
-    width: 20rem;
+    max-width: 90%;
     line-height: 2;
 }
 
@@ -201,4 +201,21 @@ input {
 
 .erro-quantidade {
     display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn {
+        font-size: 0.6rem;
+    }
+    .content-button {
+        flex-direction: column;
+    }
+    .card-eventos,
+    #qtd-convidados,
+    #data-evento {
+        width: 18rem;
+    }
+    .msgError {
+        font-size: 0.8rem;
+    }
 }
