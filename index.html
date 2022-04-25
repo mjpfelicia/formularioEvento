@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Formulário Eventos</title>
+</head>
+
+<body>
+    <main>
+        <div class="box-geral">
+            <div class="section-criar-evento">
+                <h1 class="title-principal">
+                    Criar Eventos:
+                </h1>
+                <form id="formulario" name="formulario" onsubmit="return false;">
+                    <div class="content-tipo-de-evento group">
+                        <label class="f" for="tipo">
+                            Tipo de Evento:
+                            <span class="">*</span>
+                        </label>
+
+                        <div class="cantent-card-eventos">
+                            <select class="card-eventos input-group">
+                                <option value=""> </option>
+                                <option value="Casamento com Cerimônia"> Casamento com Cerimônia </option>
+                                <option value="Casamento sem Cerimônia"> Casamento sem Cerimônia </option>
+                                <option value="Bodas"> Bodas </option>
+                                <option value="Debutante"> Debutante </option>
+                                <option value="Aniversário, Infantil"> Aniversário, Infantil </option>
+                                <option value="Confraternização"> Confraternização </option>
+                                <option value="Corporativo"> Corporativo </option>
+                                <option value="Outros"> Outros </option>
+                            </select>
+                        </div>
+                        <span class="msgError">Tipo de eventos é obrigatório.</span>
+
+                    </div>
+                    <div class="content-card-data-evento group">
+                        <div class="card-data-evento">
+                            <label for="">Data do Evento</label>
+                            <span class="">*</span><br>
+                            <input id="data-evento" class="date input-group" value="" type="date">
+                        </div>
+                        <span class="msgError">Data do evento campo é obrigatório.</span>
+                    </div>
+                    <div class="content-card-qtd group">
+                        <label for="">Qtd. de Convidados:<span class="">*</span></label>
+                        <div class="inpult-qtd">
+                            <input id="qtd-convidados" class="qtd input-group" type="tel">
+                        </div>
+                        <span class="msgError">Este campo é obrigatório.</span>
+                        <div class="erro-quantidade">
+                            O Espaço Favoritto&nbsp;tem a capacidade máxima de&nbsp;
+                            <strong>000 pessoas.</strong>
+                        </div>
+                    </div>
+                    <div class="content-button">
+                        <button type="submit" class="btn" id="criarEvento">Criar evento
+                        </button>
+                        <button id="myBtn" class="btn">Cadastra convidados
+                        </button>
+                        <button id="btnModal" class="btn">Lista de Convidados
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+
+
+            <div id="myModal" class="modal">
+                <div class="modal-content-convidados">
+                    <h3 class="title-convidados">Convidados</h3>
+                    <div class="card-nome">
+                        <div class="card-inpult">
+                            <label for="nome">Nome:<span class="">*</span></label><br>
+                            <input type="text" id="nome">
+                        </div>
+                    </div>
+                    <div class="card-data-aniversario">
+                        <div class="">
+                            <label for="idade">Idade:<span class="">*</span></label><br>
+                            <input type="text" id="idade" name="data">
+                        </div>
+                        <span class="msgNaoPodeParticipa">Cadastro não é permitido.</span>
+
+                    </div>
+                    <div class="card-telefone">
+                        <div class="">
+                            <label class="telefone" for="">Telefone de Contato:<span class=" ">*</span></label>
+                            <input class="telefone" id="telefone">
+                        </div>
+                    </div>
+                    <div class="card-email">
+                        <div class="">
+                            <label for="email">E-mail:<span class="">*</span></label><br>
+                            <input type="email" id="email" placeholder="ex: nome@exemplo.com.br ">
+                        </div>
+                    </div>
+                    <div class="card-button">
+                        <button type="submit" class="btn-cadastra">
+                            Cadastra
+                        </button>
+                    </div>
+                    <span class="close">&times;</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal-listade-convidados" class="modal-lista">
+            <div class="modal-content-lista">
+                <span class="close-x">&times;</span>
+                <h3>Convidados..</3>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="./main.js "></script>
+    <script src="./cadastrapessoas.js"></script>
+    <script src="./criarEvento.js"></script>
+
+</body>
+
+</html>
