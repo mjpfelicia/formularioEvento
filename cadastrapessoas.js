@@ -6,7 +6,14 @@ const pessoas = [];
 btn.addEventListener("click", (ev) => {
     const nome = '' + document.querySelector("#nome").value;
     const idade = document.querySelector("#idade").value;
-    const pessoa = { nome, idade: +idade };
+    const telefone = document.querySelector('#telefone').value;
+    const email = document.querySelector('#email').value;
+    const pessoa = {
+        nome,
+        idade: +idade,
+        telefone: +telefone,
+        email
+    };
     pessoas.push(pessoa);
 
     if (!podeParticipar(pessoa)) {

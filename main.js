@@ -1,5 +1,6 @@
 import { validar } from './validaForm.js';
 import ('./listaDeConvidados.js')
+import { salvarEvento } from './salvaEvento.js';
 
 // pegar os elemento para o modal e guarda en uma variável
 const modal = document.getElementById("myModal");
@@ -18,8 +19,9 @@ span.onclick = function() {
     }
     // Quando o usuário clicar em qualquer lugar fora do modal, feche-o
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+
+    if (event.target === modalista) {
+        modalista.style.display = "none";
     }
 }
 
@@ -33,4 +35,24 @@ criarEvent.addEventListener('click', (ev) => {
     const msgErro = document.querySelectorAll('.msgError')
         // criando uma função 
     validar(inputGroups, msgErro);
+
+    const [nomeEvento, dataEvento, qtdParticipantes] = inputGroups;
+
+    console.log({ inputGroups })
+
+    const evento = {
+        tipoEvento: nomeEvento.value,
+        dataEvento: dataEvento.value,
+        Qtdpessoas: qtdParticipantes.value
+    };
+
+    console.log({
+        evento
+    })
+    const convidados = [];
+
+
+    const eventos = salvarEvento(evento, convidados);
+    console.log({ eventos })
+
 })

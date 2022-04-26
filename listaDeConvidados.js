@@ -15,7 +15,7 @@ span.onclick = function() {
 // Quando o usuário clicar em qualquer lugar fora do modal, feche-o
 window.onclick = function(event) {
 
-    if (event.target == modalista) {
+    if (event.target === modalista) {
         modalista.style.display = "none";
     }
 }
