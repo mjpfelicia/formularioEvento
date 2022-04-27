@@ -17,14 +17,14 @@
                     Criar Eventos:
                 </h1>
                 <form id="formulario" name="formulario" onsubmit="return false;">
-                    <div class="content-tipo-de-evento group">
-                        <label class="f" for="tipo">
+                    <div class="content-tipo-de-evento ">
+                        <label class="tipoDeEvento" for="tipo">
                             Tipo de Evento:
-                            <span class="">*</span>
+                            <span class="detalhe">*</span>
                         </label>
 
                         <div class="cantent-card-eventos">
-                            <select class="card-eventos input-group">
+                            <select class="card-eventos">
                                 <option value=""> </option>
                                 <option value="Casamento com Cerimônia"> Casamento com Cerimônia </option>
                                 <option value="Casamento sem Cerimônia"> Casamento sem Cerimônia </option>
@@ -39,70 +39,50 @@
                         <span class="msgError">Tipo de eventos é obrigatório.</span>
 
                     </div>
-                    <div class="content-card-data-evento group">
+                    <div class="content-card-data-evento">
                         <div class="card-data-evento">
-                            <label for="">Data do Evento</label>
-                            <span class="">*</span><br>
-                            <input id="data-evento" class="date input-group" value="" type="date">
+                            <label for="data-evento">Data do Evento</label>
+                            <span class="detalhe">*</span><br>
+                            <input id="data-evento" value="" type="date">
                         </div>
                         <span class="msgError">Data do evento campo é obrigatório.</span>
                     </div>
-                    <div class="content-card-qtd group">
-                        <label for="">Qtd. de Convidados:<span class="">*</span></label>
+                    <div class="content-card-qtd">
+                        <label for="qtdconvidados">Qtd. de Convidados:<span class="detalhe">*</span></label>
                         <div class="inpult-qtd">
-                            <input id="qtd-convidados" class="qtd input-group" type="tel">
+                            <input id="qtdconvidados" class="qtd" type="number">
                         </div>
                         <span class="msgError">Este campo é obrigatório.</span>
-                        <div class="erro-quantidade">
-                            O Espaço Favoritto&nbsp;tem a capacidade máxima de&nbsp;
-                            <strong>000 pessoas.</strong>
-                        </div>
+
                     </div>
                     <div class="content-button">
-                        <button type="submit" class="btn" id="criarEvento">Criar evento
-                        </button>
-                        <button id="myBtn" class="btn">Cadastra convidados
-                        </button>
+                        <button type="submit" class="btn" id="criarEvento">Criar evento </button>
+                        <button id="myBtn" class="btn">Cadastra convidados</button>
                         </button>
                     </div>
                 </form>
 
             </div>
 
-
             <div id="myModal" class="modal">
                 <div class="modal-content-convidados">
-                    <h3 class="title-convidados">Convidados</h3>
-                    <div class="card-nome">
-                        <div class="card-inpult">
-                            <label for="nome">Nome:<span class="">*</span></label><br>
-                            <input type="text" id="nome">
-                        </div>
-                    </div>
-                    <div class="card-data-aniversario">
-                        <div class="">
-                            <label for="idade">Idade:<span class="">*</span></label><br>
-                            <input type="text" id="idade" name="data">
-                        </div>
-                        <span class="msgNaoPodeParticipa">Cadastro não é permitido.</span>
+                    <h4 class="title-convidados">Cadastra Convidados:</h4><br>
+                    <div class="whapper-convidados">
+                        <label for="campoConvidado">Nome:</label>
+                        <input type="text" id="campoConvidado" class="nome">
 
-                    </div>
-                    <div class="card-telefone">
-                        <div class="">
-                            <label class="telefone" for="">Telefone de Contato:<span class="">*</span></label><br>
-                            <input class="telefone" id="telefone">
+                        <label for="idade">Idade:<span class="detalhe">*</span></label>
+                        <input type="text" id="idade" name="data">
+                        <span class="msgNaoPodeParticipa">Cadastro não é permitido.</span>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="ex:nome@exemplo.com.br">
+                        <div class="card-button">
+                            <button class="btn" onclick="listaConvidados();">Adicionar</button>
+                            <button id="btnModal" class="btn">Lista de Convidados
+                            </button>
                         </div>
                     </div>
-                    <div class="card-email">
-                        <div class="">
-                            <label for="email">E-mail:<span class="">*</span></label><br>
-                            <input type="email" id="email" placeholder="ex:nome@exemplo.com.br">
-                        </div>
-                    </div>
-                    <div class="card-button">
-                        <button type="submit" class="btn-cadastra">Cadastra</button>
-                        <button id="btnModal" class="btn">Lista de Convidados
-                    </div>
+                    <span class="erro-quantidade">Cadastro não será permitido por ter exceder o limite de convidados.</span>
                     <span class="close">&times;</span>
                 </div>
             </div>
@@ -112,11 +92,12 @@
             <div class="modal-content-lista">
                 <span class="close-x">&times;</span>
                 <h3>Convidados..</3>
+                    <p id="quantidadeConvidado">No momento sua lista está com [0] convidado(s)</p>
             </div>
         </div>
     </main>
     <script type="module" src="./main.js "></script>
-    <script src="./cadastrapessoas.js"></script>
+    <script src="./addConvidados.js"></script>
 
 </body>
 
