@@ -258,6 +258,9 @@ input {
         width: 90%;
         height: 90%;
     }
+    .close {
+        padding-top: 2rem;
+    }
     .msgError {
         font-size: 0.8rem;
     }
