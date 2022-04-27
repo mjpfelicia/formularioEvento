@@ -79,15 +79,6 @@ input {
     padding-top: 5rem;
 }
 
-.card-nome,
-.card-data-aniversario,
-.card-telefone,
-.card-email {
-    height: 5rem;
-    width: 80%;
-    margin: 0 auto;
-}
-
 #email,
 .nome,
 #idade {

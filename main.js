@@ -62,21 +62,13 @@ criarEvent.addEventListener('click', (ev) => {
 
     const [nomeEvento, dataEvento, qtdParticipantes] = inputGroups;
 
-    console.log({ inputGroups })
-
     const evento = {
         tipoEvento: nomeEvento.value,
         dataEvento: dataEvento.value,
         Qtdpessoas: qtdParticipantes.value
     };
 
-    console.log({
-        evento
-    })
     const convidados = [];
-
-
     const eventos = salvarEvento(evento, convidados);
-    console.log({ eventos })
 
 })
