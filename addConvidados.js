@@ -1,14 +1,14 @@
 // criando lista vazia
 const lista = [];
 
-function listaConvidados() {
+function adicionarConvidados() {
     const msgErro = document.querySelector('.msgNaoPodeParticipa')
     const msgQuantidadePessoa = document.querySelector('.erro-quantidade')
     const recebeNome = document.querySelector("#campoConvidado").value;
     const idade = document.querySelector("#idade").value;
     const emailConvidado = email.value;
     const convidados = qtdconvidados.value
-        //  criando um objeto
+        //  criando uma variável do tipo objeto
     const pessoa = {
         nome: recebeNome,
         idade: +idade,
@@ -29,11 +29,21 @@ function listaConvidados() {
     // escrevendo na tela quantidade de convidados e criando lista 
     quantidadeConvidado.innerHTML = `No momento sua lista está com [${lista.length}] convidado(s)<br>
     
-    <ol>
-            ${lista.map(p => {
-                return `
-                <li>${p.nome} ${p.idade} ${p.email}<l/i>
-                `
-            })}
-    </ol>`
+    
+    <table id="tabelaDeNome">
+    <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Email</th>
+    </tr>
+     ${lista.map(p =>  {
+        return `
+        <tr>
+            <td>${p.nome}</td> 
+            <td>${p.idade}</td> 
+            <td>${p.email}</td> 
+        </td>
+        `
+    })}
+</table>`
 }

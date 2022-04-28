@@ -105,6 +105,7 @@ input {
     position: relative;
     border: none;
     color: var(--cor-branco);
+    cursor: pointer;
 }
 
 .btn-cadastra {
@@ -118,6 +119,7 @@ input {
     position: relative;
     border: none;
     color: var(--cor-branco);
+    cursor: pointer;
 }
 
 .card-button {
@@ -131,6 +133,11 @@ input {
 
 .close {
     position: absolute;
+    cursor: pointer;
+}
+
+.close-x,
+.close-eventos {
     cursor: pointer;
 }
 
@@ -154,13 +161,12 @@ input {
     width: 100%;
     height: 36rem;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
 
 .modal-content-convidados {
-    background-color: #fefefe;
+    background-color: var(--cor-cinza);
     border: 3px solid #888;
     margin: auto;
     width: 80%;
@@ -178,13 +184,33 @@ input {
     width: 100%;
     height: 36rem;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-eventos {
+    display: none;
+    text-align: center;
+    position: fixed;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 36rem;
+    overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content-lista {
-    background-color: #fefefe;
+    background-color: var(--cor-cinza);
     border: 1px solid #888;
+    margin: auto;
+    width: 80%;
+    height: 26rem;
+}
+
+.eventos {
+    background-color: var(--cor-cinza);
+    border: 1px solid var(--cor-azul-acinzentado);
     margin: auto;
     width: 80%;
     height: 26rem;
@@ -216,6 +242,61 @@ input {
     font-size: 1rem;
 }
 
+#tabelaDeEventos {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tabelaDeEventos td,
+#tabelaDeEventos th {
+    border: 1px solid var(--cor-cinza);
+    padding: 0.3rem;
+    font-size: 1rem;
+}
+
+#tabelaDeEventos tr:nth-child(even) {
+    background-color: var(--cor-cinza);
+}
+
+#tabelaDeEventos tr:hover {
+    background-color: var(--cor-cinza);
+}
+
+#tabelaDeEventos th {
+    text-align: left;
+    background-color: var(--cor-verde-limao);
+    color: var(--cor-branco);
+    font-size: 1rem;
+}
+
+#tabelaDeNome {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tabelaDeNome td,
+#tabelaDeNome th {
+    border: 1px solid var(--cor-cinza);
+    padding: 0.3rem;
+    font-size: 1rem;
+}
+
+#tabelaDeNome tr:nth-child(even) {
+    background-color: var(--cor-cinza);
+}
+
+#tabelaDeNome tr:hover {
+    background-color: var(--cor-cinza);
+}
+
+#tabelaDeNome th {
+    text-align: left;
+    background-color: var(--cor-verde-limao);
+    color: var(--cor-branco);
+    font-size: 1rem;
+}
+
 @media only screen and (max-width: 600px) {
     .btn,
     .btn-cadastra {
@@ -241,10 +322,12 @@ input {
         width: 90%;
     }
     .modal,
-    .modal-lista {
+    .modal-lista,
+    .modal-eventos {
         height: 100%;
     }
     .modal-content-convidados,
+    .eventos,
     .modal-content-lista {
         width: 90%;
         height: 90%;
@@ -254,5 +337,8 @@ input {
     }
     .msgError {
         font-size: 0.8rem;
+    }
+    .qtbConvidado {
+        font-size: 1rem;
     }
 }

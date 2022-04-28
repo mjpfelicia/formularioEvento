@@ -57,14 +57,15 @@
                     </div>
                     <div class="content-button">
                         <button type="submit" class="btn" id="criarEvento">Criar evento </button>
-                        <button id="myBtn" class="btn">Cadastra convidados</button>
+                        <button id="btnlistaDeEventos" class="btn">Lista de eventos</button>
+                        <button id="cadastroConvidados" class="btn">Cadastra convidados</button>
                         </button>
                     </div>
                 </form>
 
             </div>
 
-            <div id="myModal" class="modal">
+            <div id="modalConvidados" class="modal">
                 <div class="modal-content-convidados">
                     <h4 class="title-convidados">Cadastra Convidados:</h4><br>
                     <div class="whapper-convidados">
@@ -77,12 +78,12 @@
                         <label for="email">Email:</label>
                         <input type="email" id="email" placeholder="ex:nome@exemplo.com.br">
                         <div class="card-button">
-                            <button class="btn" onclick="listaConvidados();">Adicionar</button>
-                            <button id="btnModal" class="btn">Lista de Convidados
-                            </button>
+                            <button class="btn" onclick="adicionarConvidados();">Adicionar</button>
+                            <button id="btnModal" class="btn">Lista de convidados</button>
                         </div>
                     </div>
-                    <span class="erro-quantidade">Cadastro não será permitido por ter exceder o limite de convidados.</span>
+                    <span class="erro-quantidade">Cadastro não será permitido por ter exceder o limite de
+                        convidados.</span>
                     <span class="close">&times;</span>
                 </div>
             </div>
@@ -92,7 +93,13 @@
             <div class="modal-content-lista">
                 <span class="close-x">&times;</span>
                 <h3>Convidados..</3>
-                    <p id="quantidadeConvidado">No momento sua lista está com [0] convidado(s)</p>
+                    <p id="quantidadeConvidado" class="qtbConvidado">No momento sua lista está com [0] convidado(s)</p>
+            </div>
+        </div>
+        <div id="myModal-eventos" class="modal-eventos">
+            <div class="eventos">
+                <span class="close-eventos">&times;</span>
+                <h3 id="eventoCriado">Eventos cadastrado [0] </h3>
             </div>
         </div>
     </main>
