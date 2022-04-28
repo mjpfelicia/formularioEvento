@@ -341,4 +341,8 @@ input {
     .qtbConvidado {
         font-size: 1rem;
     }
+    #tabelaDeEventos td,
+    #tabelaDeEventos th {
+        font-size: 0.6rem;
+    }
 }
